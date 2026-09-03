@@ -1,30 +1,29 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-public class OddEvenCollection {
+public class Main {
     public static void main(String[] args) {
 
-        ArrayList<Integer> numbers = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
 
-        numbers.add(10);
-        numbers.add(15);
-        numbers.add(20);
-        numbers.add(25);
-        numbers.add(30);
-        numbers.add(33);
+        ArrayList<Integer> list = new ArrayList<>();
 
-        ArrayList<Integer> even = new ArrayList<>();
-        ArrayList<Integer> odd = new ArrayList<>();
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
 
-        for (int num : numbers) {
+        System.out.println("Enter elements:");
+        for (int i = 0; i < n; i++) {
+            list.add(sc.nextInt());
+        }
+
+        System.out.println("Even numbers are:");
+
+        for (int num : list) {
             if (num % 2 == 0) {
-                even.add(num);
-            } else {
-                odd.add(num);
+                System.out.println(num);
             }
         }
 
-        System.out.println("Original List: " + numbers);
-        System.out.println("Even Numbers: " + even);
-        System.out.println("Odd Numbers: " + odd);
+        sc.close();
     }
 }
